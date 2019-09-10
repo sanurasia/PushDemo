@@ -15,7 +15,7 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let notificationDelegate = SampleNotificationDelegate()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.configureNotification()
@@ -35,13 +35,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func configureNotification() {
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
-            center.requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
-        }
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
-            (granted, error) in
+            center.requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in}
+            center.delegate = self.notificationDelegate
             
-            //Parse errors and track state
+            let openAction = UNNotificationAction(identifier: "OpenNotification", title: NSLocalizedString("Abrir", comment: ""), options: UNNotificationActionOptions.foreground)
+            let deafultCategory = UNNotificationCategory(identifier: "CustomSamplePush", actions: [openAction], intentIdentifiers: [], options: [])
+            center.setNotificationCategories(Set([deafultCategory]))
+            
+            
+        }else{
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+                (granted, error) in
+                //Parse errors and track state
+            }
         }
         UIApplication.shared.registerForRemoteNotifications()
     }
