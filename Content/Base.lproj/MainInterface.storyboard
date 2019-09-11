@@ -15,33 +15,30 @@
             <objects>
                 <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="Content" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWn-7c-nap">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-PG-ULY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="7Jc-M2-wFV"/>
+                                    <constraint firstAttribute="height" constant="200" id="MyF-li-8F7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.45882353186607361" green="0.74901962280273438" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="zWn-7c-nap" secondAttribute="bottom" id="fWL-9U-RgJ"/>
-                            <constraint firstItem="zWn-7c-nap" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" id="nOU-pp-bEb"/>
-                            <constraint firstItem="zWn-7c-nap" firstAttribute="trailing" secondItem="2BE-c3-nQJ" secondAttribute="trailing" id="xpz-MD-VTs"/>
-                            <constraint firstItem="zWn-7c-nap" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="zVx-Pc-JVf"/>
+                            <constraint firstItem="kgb-PG-ULY" firstAttribute="trailing" secondItem="2BE-c3-nQJ" secondAttribute="trailing" id="2EM-Hb-5ti"/>
+                            <constraint firstItem="kgb-PG-ULY" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="A9I-tK-pkb"/>
+                            <constraint firstItem="kgb-PG-ULY" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" id="nwf-Hg-tW3"/>
+                            <constraint firstAttribute="bottom" secondItem="kgb-PG-ULY" secondAttribute="bottom" id="rs4-Xl-ws2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="50"/>
+                    <size key="freeformSize" width="320" height="200"/>
                     <connections>
-                        <outlet property="label" destination="zWn-7c-nap" id="iJc-hw-hsK"/>
+                        <outlet property="imageView" destination="kgb-PG-ULY" id="bqZ-gA-JRD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
